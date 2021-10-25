@@ -1,3 +1,2 @@
 #!/bin/sh
-echo "Hello world"
-echo $1
+python validate.py $1
