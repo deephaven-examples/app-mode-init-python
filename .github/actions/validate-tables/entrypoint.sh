@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Hello world"
-ls -al
+echo $1
