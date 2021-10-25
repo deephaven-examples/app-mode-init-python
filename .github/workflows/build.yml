@@ -22,4 +22,4 @@ jobs:
       - name: Validate tables
         uses: ./.github/actions/validate-tables
         with:
-          table-names: ["source", "result", "table"]
+          table-names: "source result table"
