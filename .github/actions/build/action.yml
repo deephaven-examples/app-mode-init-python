@@ -1,0 +1,11 @@
+name: Build
+description: Builds the Deephaven project
+inputs:
+  docker-compose-test:
+    description: Path to the docker-compose.yml test file
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.docker-compose-test }}

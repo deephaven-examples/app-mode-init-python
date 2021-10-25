@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   grpc-api:
-    image: app-mode-deephaven/grpc-api:latest
+    image: deephaven-examples/app-mode-init-python:latest
     expose:
       - '8080'
     volumes:

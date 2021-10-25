@@ -1,0 +1,11 @@
+name: Validate Tables
+description: Validates the presence of tables in the Deephaven server
+inputs:
+  table-names:
+    description: A list of table names to check
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.table-names }}

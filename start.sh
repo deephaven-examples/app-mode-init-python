@@ -1,2 +1,2 @@
-docker build --tag app-mode-deephaven/grpc-api .
+docker build --tag deephaven-examples/app-mode-init-python .
 docker-compose up
