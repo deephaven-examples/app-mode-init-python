@@ -1,4 +1,4 @@
-FROM alpine:3
+FROM docker/compose:alpine-1.29.2
 
 COPY entrypoint.sh /entrypoint.sh
 
