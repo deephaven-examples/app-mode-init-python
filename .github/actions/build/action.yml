@@ -4,6 +4,9 @@ inputs:
   docker-compose-test:
     description: Path to the docker-compose.yml test file
     required: true
+  docker-build-command:
+    description: The command to build the docker image
+    required: true
 runs:
   using: docker
   image: Dockerfile

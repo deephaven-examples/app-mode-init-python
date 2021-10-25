@@ -4,6 +4,8 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+$2
+
 docker-compose -f $1 up -d
 
 while true; do

@@ -19,6 +19,7 @@ jobs:
         uses: ./.github/actions/build
         with:
           docker-compose-test: ./docker-compose.yml
+          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
       - name: Validate tables
         uses: ./.github/actions/validate-tables
         with:
