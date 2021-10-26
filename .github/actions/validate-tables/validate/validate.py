@@ -21,7 +21,9 @@ def main(table_names, host=None):
     Returns:
         None
     """
+    print("Attempting to connect to host at")
     print(host)
+    print("Attempting to validate table names")
     print(table_names)
     session = None
 
