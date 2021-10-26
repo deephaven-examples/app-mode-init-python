@@ -2,7 +2,7 @@ name: Validate Tables
 description: Validates the presence of tables in the Deephaven server
 inputs:
   table-names:
-    description: A string containing a space separated list of table names to check
+    description: A string containing a comma separated list of table names to check
     required: true
   host:
     description: The host name of the Deephaven instance

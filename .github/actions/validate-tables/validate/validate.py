@@ -50,6 +50,7 @@ def main(table_names, host=None):
             #session.open_table(table_name)
             #Temporary workaround: This script is sufficient to check that the table exists
             session.run_script("{table}={table}".format(table=table_name))
+            print("Validates presence of table {table}".format(table=table_name))
         except DHError as e:
             print("Deephaven error when trying to open table {table_name}".format(table_name=table_name))
             print(e)
@@ -65,8 +66,10 @@ usage: python validate.py <table-names> host
 
 if __name__ == '__main__':
     import sys
-    print(sys.argv)
     try:
+        #For some reason, the workflow is passing sys.argv[1] with an extra set of
+        #double quotes, so it's like '"value,value"'. This splice removes those quotes
+        #before splitting on the comma
         table_names = sys.argv[1][1:-1].split(",")
     except:
         print(usage)
