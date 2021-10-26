@@ -67,7 +67,7 @@ if __name__ == '__main__':
     import sys
     print(sys.argv)
     try:
-        table_names = sys.argv[1].split(",")
+        table_names = sys.argv[1][1:-1].split(",")
     except:
         print(usage)
         exit(1)
