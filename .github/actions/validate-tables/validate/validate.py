@@ -21,6 +21,8 @@ def main(table_names, host=None):
     Returns:
         None
     """
+    print(host)
+    print(table_names)
     session = None
 
     #Simple retry loop in case the server tries to launch before Deephaven is ready
