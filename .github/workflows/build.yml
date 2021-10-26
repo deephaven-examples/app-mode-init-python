@@ -25,3 +25,5 @@ jobs:
         with:
           table-names: "source result table"
           host: "localhost"
+          docker-compose-test: ./docker-compose.yml
+          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .

@@ -8,9 +8,17 @@ inputs:
     description: The host name of the Deephaven instance
     required: false
     default: localhost
+  docker-compose-test:
+    description: Path to the docker-compose.yml test file
+    required: true
+  docker-build-command:
+    description: The command to build the package's docker image
+    required: true
 runs:
   using: docker
   image: Dockerfile
   args:
     - ${{ inputs.table-names }}
     - ${{ inputs.host }}
+    - ${{ inputs.docker-compose-test }}
+    - ${{ inputs.docker-build-command }}

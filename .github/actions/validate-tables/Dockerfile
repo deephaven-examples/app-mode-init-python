@@ -1,11 +1,8 @@
-FROM python:3.8
+FROM docker/compose:alpine-1.29.2
 
 COPY entrypoint.sh /entrypoint.sh
-COPY validate.py /validate.py
-COPY requirements.txt /requirements.txt
+COPY validate /github-actions-validate
 
 RUN ["chmod", "+x" ,"/entrypoint.sh"]
-RUN ["pip", "install", "--upgrade", "pip"]
-RUN ["pip", "install", "-r", "/requirements.txt"]
 
 ENTRYPOINT ["/entrypoint.sh"]

@@ -1,0 +1,5 @@
+version: "3.4"
+
+services:
+  validate-tables:
+    image: deephaven-examples/validate-tables:latest
