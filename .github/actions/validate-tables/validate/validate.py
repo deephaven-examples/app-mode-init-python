@@ -8,6 +8,8 @@ A python script that validates the presence of tables in Deephaven.
 """
 from pydeephaven import Session, DHError
 
+import time
+
 def main(table_names, host=None):
     """
     Main method for the script. Simply validates that each table exists
@@ -20,6 +22,21 @@ def main(table_names, host=None):
         None
     """
     session = None
+
+    #Simple retry loop in case the server tries to launch before Deephaven is ready
+    count = 0
+    max_count = 5
+    while (count < max_count):
+        try:
+            session = Session(host="envoy") #"envoy" is the host within the docker application
+            count = max_count
+        except:
+            print("Failed to connect to Deephaven... Waiting to try again")
+            time.sleep(3)
+            count += 1
+    if session is None:
+        sys.exit("Failed to connect to Deephaven after 5 attempts")
+
     if host is None:
         session = Session()
     else:
