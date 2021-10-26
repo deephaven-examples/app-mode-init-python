@@ -28,7 +28,10 @@ def main(table_names, host=None):
     max_count = 5
     while (count < max_count):
         try:
-            session = Session(host="envoy") #"envoy" is the host within the docker application
+            if host is None:
+                session = Session()
+            else:
+                session = Session(host=host)
             count = max_count
         except:
             print("Failed to connect to Deephaven... Waiting to try again")
@@ -36,11 +39,6 @@ def main(table_names, host=None):
             count += 1
     if session is None:
         sys.exit("Failed to connect to Deephaven after 5 attempts")
-
-    if host is None:
-        session = Session()
-    else:
-        session = Session(host=host)
 
     table = session.empty_table(3)
     for table_name in table_names:
