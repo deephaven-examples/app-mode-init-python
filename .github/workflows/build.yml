@@ -23,8 +23,8 @@ jobs:
       - name: Validate tables
         uses: ./.github/actions/validate-tables
         with:
-          table-names: source result
-          host: envoy
+          table-names: "source result"
+          host: "envoy"
           docker-compose-test: ./docker-compose.yml
           docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
           project-name: test-tables

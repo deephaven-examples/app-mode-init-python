@@ -65,15 +65,17 @@ usage: python validate.py "<table-names>" host
 
 if __name__ == '__main__':
     import sys
-    print(sys.argv)
+    #For some reason, something is already wrapping quotes around the parameters in the actions workflow, so they
+    #end up looking like ['/validate.py', '"source result"', '"envoy"']. This section assumes
+    #this, and removes the first and last items of the strings (which should be the double quotes)
     try:
-        table_names = sys.argv[1].split(" ")
+        table_names = sys.argv[1][1:-1].split(" ")
     except:
         print(usage)
         exit(1)
 
     host = None
     if len(sys.argv) > 2:
-        host = sys.argv[2]
+        host = sys.argv[2][1:-1]
 
     main(table_names, host)
