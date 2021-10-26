@@ -68,6 +68,7 @@ if __name__ == '__main__':
     #For some reason, something is already wrapping quotes around the parameters in the actions workflow, so they
     #end up looking like ['/validate.py', '"source result"', '"envoy"']. This section assumes
     #this, and removes the first and last items of the strings (which should be the double quotes)
+    print(sys.argv)
     try:
         table_names = sys.argv[1][1:-1].split(" ")
     except:
