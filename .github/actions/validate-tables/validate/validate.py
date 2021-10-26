@@ -32,7 +32,7 @@ def main(table_names, host=None):
             count = max_count
         except:
             print("Failed to connect to Deephaven... Waiting to try again")
-            time.sleep(3)
+            time.sleep(5)
             count += 1
     if session is None:
         sys.exit("Failed to connect to Deephaven after 5 attempts")
