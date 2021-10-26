@@ -14,6 +14,9 @@ inputs:
   docker-build-command:
     description: The command to build the package's docker image
     required: true
+  project-name:
+    description: The docker-compose project name to bundle separate docker-compose files
+    required: true
 runs:
   using: docker
   image: Dockerfile
@@ -22,3 +25,4 @@ runs:
     - ${{ inputs.host }}
     - ${{ inputs.docker-compose-test }}
     - ${{ inputs.docker-build-command }}
+    - ${{ inputs.project-name }}
