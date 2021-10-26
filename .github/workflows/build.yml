@@ -15,16 +15,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      #- name: Build
-      #  uses: ./.github/actions/build
-      #  with:
-      #    docker-compose-test: ./docker-compose.yml
-      #    docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
+      - name: Build
+        uses: ./.github/actions/build
+        with:
+          docker-compose-test: ./docker-compose.yml
+          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
+          project-name: test-tables
       - name: Validate tables
         uses: ./.github/actions/validate-tables
         with:
           table-names: "source,result"
           host: "envoy"
-          docker-compose-test: ./docker-compose.yml
-          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
           project-name: test-tables
