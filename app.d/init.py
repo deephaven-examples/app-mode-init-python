@@ -1,7 +1,7 @@
 """
 init.py
 
-A very bare bones simple example of initializing a Deephaven server through application mode.
+A very simple example of initializing a Deephaven server through application mode.
 
 This script simply makes a table with 5 values in it.
 

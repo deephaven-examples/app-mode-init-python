@@ -10,7 +10,7 @@ This app is a bare bones example of how to launch a server using [Deephaven's ap
 * `app.d` - The app mode directory. Deephaven expects this to contain at least one `*.app` file.
 * `app.d/app.app` - The app mode config file. This defines what type of script to run on launch.
 * `app.d/init.py` - The Python script to run on launch.
-* `docker-compose.yml` - The docker-compose file for the application. This is mostly the same as the [Deephaven docker-compose file](https://raw.githubusercontent.com/deephaven/deephaven-core/main/containers/python-examples/docker-compose.yml) with modifications to run app mode, specifically the `-Ddeephaven.application.dir=/app.d` flag being set on the `grpc-api`.
+* `docker-compose.yml` - The docker-compose file for the application. This is mostly the same as the [Deephaven docker-compose file](https://raw.githubusercontent.com/deephaven/deephaven-core/main/containers/python-examples/docker-compose.yml), but with modifications to run app mode, specifically the `-Ddeephaven.application.dir=/app.d` flag being set on the `grpc-api`.
 * `start.sh` - A helper script to launch the application.
 
 ### High level overview

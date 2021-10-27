@@ -1,7 +1,7 @@
 """
 validate.py
 
-A python script that validates the presence of tables in Deephaven.
+A Python script that validates the presence of tables in Deephaven.
 
 @author Jake Mulford
 @copyright Deephaven Data Labs
