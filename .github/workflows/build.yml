@@ -16,11 +16,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        uses: ./.github/actions/build
-        with:
-          project-file: ./docker-compose.yml
-          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
-          project-name: test-tables
+        run: |
+           docker build --tag deephaven-examples/app-mode-init-python .
+           docker-compose -f docker-compose.yml -p  test-tables up -d
+#        uses: ./.github/actions/build
+#        with:
+#          project-file: ./docker-compose.yml
+#          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
+#          project-name: test-tables
       - name: Validate tables
         uses: ./.github/actions/validate-tables
         with:
