@@ -24,6 +24,8 @@ jobs:
       - name: Validate tables
         uses: ./.github/actions/validate-tables
         with:
-          table-names: "source,result"
+          table-names:
+            - source
+            - result
           host: "envoy"
           project-name: test-tables
