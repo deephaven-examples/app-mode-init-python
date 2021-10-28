@@ -19,13 +19,8 @@ jobs:
         run: |
            docker build --tag deephaven-examples/app-mode-init-python .
            docker-compose -f docker-compose.yml -p  test-tables up -d
-#        uses: ./.github/actions/build
-#        with:
-#          project-file: ./docker-compose.yml
-#          docker-build-command: docker build --tag deephaven-examples/app-mode-init-python .
-#          project-name: test-tables
       - name: Validate tables
-        uses: ./.github/actions/validate-tables
+        uses: deephaven/action-assert-dh-tables-present@v1
         with:
           table-names: "source,result"
           host: "envoy"
