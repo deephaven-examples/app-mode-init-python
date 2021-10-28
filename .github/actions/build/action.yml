@@ -5,7 +5,7 @@ inputs:
     description: Path to the docker-compose.yml test file
     required: true
   docker-build-command:
-    description: The command to build the package's docker image
+    description: The command to build the package's Docker image
     required: true
   project-name:
     description: The docker-compose project name to bundle separate docker-compose files
