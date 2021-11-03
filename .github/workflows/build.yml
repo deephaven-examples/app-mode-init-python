@@ -22,6 +22,5 @@ jobs:
       - name: Validate tables
         uses: deephaven/action-assert-dh-tables-present@fix-remote-usage
         with:
-          table-names: "source,result"
-          host: "envoy"
-          project-name: test-tables
+          table-names: source,result
+          host: localhost
