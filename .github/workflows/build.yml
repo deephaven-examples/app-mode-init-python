@@ -20,7 +20,7 @@ jobs:
            docker build --tag deephaven-examples/app-mode-init-python .
            docker-compose -f docker-compose.yml -p  test-tables up -d
       - name: Validate tables
-        uses: deephaven/action-assert-dh-tables-present@fix-remote-usage
+        uses: deephaven/action-assert-dh-tables-present@v1
         with:
           table-names: source,result
           host: localhost
