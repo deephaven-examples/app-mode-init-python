@@ -1,2 +1,2 @@
-FROM ghcr.io/deephaven/grpc-api
+FROM ghcr.io/deephaven/server
 COPY app.d /app.d
