@@ -2,17 +2,17 @@ version: "3.4"
 
 services:
   server:
-    image: deephaven-examples/app-mode-init-python:latest
+    image: ghcr.io/deephaven/server:${VERSION:-latest}
     expose:
       - '8080'
     volumes:
       - ./data:/data
       - api-cache:/cache
     environment:
-      - JAVA_TOOL_OPTIONS=-Xmx4g -Ddeephaven.console.type=python -Ddeephaven.application.dir=/app.d
+      - JAVA_TOOL_OPTIONS=-Xmx4g -Ddeephaven.console.type=python -Ddeephaven.application.dir=/data/app.d
 
   web:
-    image: ghcr.io/deephaven/web:${VERSION:-edge}
+    image: ghcr.io/deephaven/web:${VERSION:-latest}
     expose:
       - '80'
     volumes:
@@ -20,7 +20,7 @@ services:
       - web-tmp:/tmp
 
   grpc-proxy:
-    image: ghcr.io/deephaven/grpc-proxy:${VERSION:-edge}
+    image: ghcr.io/deephaven/grpc-proxy:${VERSION:-latest}
     environment:
       - BACKEND_ADDR=server:8080
     depends_on:
@@ -29,7 +29,7 @@ services:
       - '8080'
 
   envoy:
-    image: ghcr.io/deephaven/envoy:${VERSION:-edge}
+    image: ghcr.io/deephaven/envoy:${VERSION:-latest}
     depends_on:
       - web
       - grpc-proxy
