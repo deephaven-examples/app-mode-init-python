@@ -1,2 +1,2 @@
-FROM ghcr.io/deephaven/server
+FROM ghcr.io/deephaven/server:edge
 COPY app.d /app.d
