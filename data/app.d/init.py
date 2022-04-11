@@ -26,7 +26,7 @@ def start(app: ApplicationState):
     table = empty_table(5)
     table = table.update(["Values = i"])
 
-    #app.setField("table", table) #TODO: figure out fix
+    app.setField("table", table.j_object)
 
 def initialize(func: Callable[[ApplicationState], None]):
   app = jpy.get_type("io.deephaven.appmode.ApplicationContext").get()
